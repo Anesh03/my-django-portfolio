@@ -1,0 +1,231 @@
+/* core/static/core/styles.css */
+
+/* 1. Typography & Base */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    /* THEME: Dark Neon Purple */
+    --primary-neon: #a855f7; /* Bright Neon Violet */
+    --secondary-neon: #d8b4fe; /* Lighter Glow */
+    --bg-dark: #0f0720; /* Very Dark Purple (almost black) */
+
+    /* Dark Glass Variables */
+    --glass-bg: rgba(20, 10, 40, 0.6); /* Dark see-through */
+    --glass-border: rgba(168, 85, 247, 0.3); /* Purple border glow */
+    --text-main: #ffffff;
+    --text-muted: #bdaecf;
+}
+
+body {
+    /* Deep Space Purple Gradient */
+    background: radial-gradient(circle at top right, #2e1065, #0f0720 60%, #000000);
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    color: var(--text-main);
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.5px;
+    color: white;
+}
+
+/* 2. The Main Dark Glass Container */
+.glass-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px); /* Heavy Blur */
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.15); /* Purple Glow behind box */
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+/* 3. Profile Header */
+.profile-header {
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.1) 0%, rgba(0,0,0,0) 100%);
+    padding: 3rem 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-neon);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+    object-fit: cover;
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
+}
+
+/* 4. Floating Tabs (Dark Mode Version) */
+.custom-tab-btn {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text-muted) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 50px !important;
+    padding: 8px 15px !important;
+    font-size: 0.8rem !important;
+    white-space: nowrap !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.custom-tab-btn:hover {
+    background: rgba(168, 85, 247, 0.2) !important;
+    color: white !important;
+    border-color: var(--primary-neon) !important;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+.custom-tab-btn.active {
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.6);
+    border: none !important;
+}
+
+.custom-tab-btn i {
+    font-size: 0.9rem;
+    margin-right: 6px !important;
+}
+
+/* 5. The Timeline */
+.timeline {
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    margin-left: 10px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    background-color: var(--primary-neon);
+    border-radius: 50%;
+    position: absolute;
+    left: -38px;
+    top: 5px;
+    border: 2px solid #0f0720;
+    box-shadow: 0 0 10px var(--primary-neon);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--secondary-neon);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* 6. Project Cards (Dark Tiles) */
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    overflow: hidden;
+    color: white;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    background: rgba(30, 20, 50, 0.8);
+    border-color: var(--primary-neon);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+.project-card h5 { color: white !important; }
+.project-card p.text-muted { color: #bdaecf !important; }
+
+/* 7. Tech Badges */
+.tech-badge {
+    font-size: 0.75rem;
+    background: rgba(168, 85, 247, 0.15);
+    color: #d8b4fe;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-right: 5px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+/* 8. Text Colors */
+.text-muted { color: var(--text-muted) !important; }
+.text-primary { color: var(--primary-neon) !important; }
+
+/* Animation */
+.tab-pane.active { animation: fadeIn 0.6s ease-in-out; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 9. STRONG FIX FOR LISTS */
+.list-group-item {
+    background-color: transparent !important;
+    color: #d8b4fe !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2) !important;
+    padding: 12px 0 !important;
+    font-size: 0.95rem;
+}
+.list-group-item:hover {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    padding-left: 10px !important;
+    transition: all 0.3s ease;
+}
+.list-group-item i {
+    color: #a855f7 !important;
+    margin-right: 10px;
+}
+.list-group-item:last-child { border-bottom: none !important; }
+
+/* 10. FORCE FIX FOR CERTIFICATION BOXES (Removes White BG) */
+#cert .d-flex {
+    /* Turn the white box into a Dark Glass box */
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(168, 85, 247, 0.3) !important;
+    color: white !important; /* Force text to be white */
+}
+
+/* Ensure the text inside is visible */
+#cert span, #cert h5, #cert p {
+    color: #e2e8f0 !important; /* Light grey/white text */
+    font-weight: 500;
+}
+
+/* Make the icon Neon Purple */
+#cert i {
+    color: #a855f7 !important;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+/* Hover Effect */
+#cert .d-flex:hover {
+    background-color: rgba(168, 85, 247, 0.15) !important;
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+    border-color: #a855f7 !important;
+}
