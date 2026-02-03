@@ -66,29 +66,39 @@ h1, h2, h3, h4, h5 {
     box-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
 }
 
-/* 4. Floating Tabs (Dark Mode Version) */
+/* Fixed: Equal Size Professional Tabs */
 .custom-tab-btn {
     background: rgba(255, 255, 255, 0.05) !important;
     color: var(--text-muted) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 50px !important;
-    padding: 8px 15px !important;
-    font-size: 0.8rem !important;
-    white-space: nowrap !important;
+
+    /* FORCE EQUAL SIZE & ALIGNMENT */
+    min-width: 160px;       /* Forces all buttons to be at least this wide */
+    flex: 1;                /* Makes them grow equally to fill space */
+    justify-content: center; /* Centers the Text & Icon perfectly */
+    text-align: center;
+
+    padding: 10px 15px !important;
+    font-size: 0.9rem !important;
     font-weight: 500 !important;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
+    white-space: nowrap; /* Keeps text on one line */
 }
 
+/* Hover Effect */
 .custom-tab-btn:hover {
     background: rgba(168, 85, 247, 0.2) !important;
     color: white !important;
     border-color: var(--primary-neon) !important;
     box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+    transform: translateY(-2px);
 }
 
+/* Active State */
 .custom-tab-btn.active {
     background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
     color: white !important;
@@ -98,10 +108,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .custom-tab-btn i {
-    font-size: 0.9rem;
-    margin-right: 6px !important;
+    font-size: 1rem;
+    margin-right: 8px !important;
 }
-
 /* 5. The Timeline */
 .timeline {
     border-left: 2px solid rgba(255, 255, 255, 0.1);

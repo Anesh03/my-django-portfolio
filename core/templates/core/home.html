@@ -39,36 +39,36 @@
                     </div>
 
                     <div class="text-center">
-                        <<div class="d-flex justify-content-center flex-wrap gap-3 mb-5" role="tablist">
+                        <div class="nav nav-pills d-flex justify-content-center flex-wrap gap-2 mb-5" id="pills-tab" role="tablist">
 
-    <button class="nav-link active custom-tab-btn" data-bs-toggle="pill" data-bs-target="#exp">
-        <i class="bi bi-briefcase-fill me-2"></i>Experience
-    </button>
+                            <button class="nav-link active custom-tab-btn" id="pills-exp-tab" data-bs-toggle="pill" data-bs-target="#exp" type="button" role="tab">
+                                <i class="bi bi-briefcase-fill me-2"></i>Experience
+                            </button>
 
-    <button class="nav-link custom-tab-btn" data-bs-toggle="pill" data-bs-target="#edu">
-        <i class="bi bi-mortarboard-fill me-2"></i>Qualification
-    </button>
+                            <button class="nav-link custom-tab-btn" id="pills-edu-tab" data-bs-toggle="pill" data-bs-target="#edu" type="button" role="tab">
+                                <i class="bi bi-mortarboard-fill me-2"></i>Qualification
+                            </button>
 
-    <button class="nav-link custom-tab-btn" data-bs-toggle="pill" data-bs-target="#proj">
-        <i class="bi bi-code-slash me-2"></i>Projects
-    </button>
+                            <button class="nav-link custom-tab-btn" id="pills-proj-tab" data-bs-toggle="pill" data-bs-target="#proj" type="button" role="tab">
+                                <i class="bi bi-code-slash me-2"></i>Projects
+                            </button>
 
-    <button class="nav-link custom-tab-btn" data-bs-toggle="pill" data-bs-target="#cert">
-        <i class="bi bi-patch-check-fill me-2"></i>Certifications
-    </button>
+                            <button class="nav-link custom-tab-btn" id="pills-cert-tab" data-bs-toggle="pill" data-bs-target="#cert" type="button" role="tab">
+                                <i class="bi bi-patch-check-fill me-2"></i>Certifications
+                            </button>
 
-    <button class="nav-link custom-tab-btn" data-bs-toggle="pill" data-bs-target="#skills">
-        <i class="bi bi-cpu-fill me-2"></i>Skills
-    </button>
+                            <button class="nav-link custom-tab-btn" id="pills-skills-tab" data-bs-toggle="pill" data-bs-target="#skills" type="button" role="tab">
+                                <i class="bi bi-cpu-fill me-2"></i>Skills
+                            </button>
 
-</div>
+                        </div>
                     </div>
 
                     <hr class="my-5 opacity-25">
 
-                    <div class="tab-content">
+                    <div class="tab-content" id="pills-tabContent">
 
-                        <div class="tab-pane fade show active" id="exp">
+                        <div class="tab-pane fade show active" id="exp" role="tabpanel">
                             <h3 class="mb-4 fw-bold text-primary"><i class="bi bi-briefcase me-2"></i>Experience</h3>
                             <div class="timeline">
                                 {% for job in experience %}
@@ -83,7 +83,7 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="edu">
+                        <div class="tab-pane fade" id="edu" role="tabpanel">
                             <h3 class="mb-4 fw-bold text-primary"><i class="bi bi-mortarboard me-2"></i>Qualification</h3>
                             <div class="timeline">
                                 {% for school in education %}
@@ -98,7 +98,7 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="proj">
+                        <div class="tab-pane fade" id="proj" role="tabpanel">
                             <h3 class="mb-4 fw-bold text-primary"><i class="bi bi-code-slash me-2"></i>Projects</h3>
                             <div class="row g-4">
                                 {% for project in projects %}
@@ -121,21 +121,21 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="cert">
-                            <h3 class="mb-4 fw-bold text-primary"><i class="bi bi-award me-2"></i>Certifications</h3>
-                            <div class="row">
+                        <div class="tab-pane fade" id="cert" role="tabpanel">
+                            <div class="d-flex align-items-center mb-4">
+                                <h3 class="fw-bold text-primary m-0"><i class="bi bi-award me-2"></i>Certifications</h3>
+                            </div>
+                            <div class="list-group list-group-flush" id="cert-list">
                                 {% for cert in certifications %}
-                                    <div class="col-md-6 mb-3">
-                                        <div class="d-flex align-items-center p-3 bg-white rounded shadow-sm border border-light">
-                                            <i class="bi bi-patch-check-fill text-success fs-3 me-3"></i>
-                                            <span class="fw-semibold">{{ cert }}</span>
-                                        </div>
+                                    <div class="list-group-item d-flex align-items-center">
+                                        <i class="bi bi-patch-check-fill fs-5 flex-shrink-0"></i>
+                                        <span class="fw-medium ms-2">{{ cert }}</span>
                                     </div>
                                 {% endfor %}
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="skills">
+                        <div class="tab-pane fade" id="skills" role="tabpanel">
                             <h3 class="mb-4 fw-bold text-primary"><i class="bi bi-tools me-2"></i>Technical Skills</h3>
                             <div class="d-flex flex-wrap gap-2">
                                 {% for skill in skills %}
@@ -146,7 +146,8 @@
                             </div>
                         </div>
 
-                    </div> </div>
+                    </div>
+                </div>
             </div>
 
             <div class="text-center mt-4 mb-5">
